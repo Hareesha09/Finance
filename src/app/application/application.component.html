@@ -1,0 +1,102 @@
+
+<div class="container">
+    <div class="row">
+
+            <div class="col-md-2 register-left" style="margin-top: 150px;">
+                <h3 style="color:black">Welcome,<br>Application</h3>
+                <p style="color:black">You are 2 minutes away from applying for your loan!</p>
+            </div>
+
+      <div class="col s8 offset-s2">
+        <div class="card grey lighten-2">
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width tabs-transparent">
+              <li class="tab">
+                <a>Income Details</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-content white">
+            <div class="row">
+
+                <form class="col s12 white" #userRegistrationForm="ngForm">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input style="margin-top:10px" type="text" name="PropertyLocation" [(ngModel)]="PropertyLocation" placeholder="Property Location" required />
+                      </div>
+
+                      <!-- 
+                      <div class="input-field col s6">
+                        <input type="text" name="PropertyName" [(ngModel)]="PropertyName" placeholder="Property Name">
+                      </div> -->
+
+                      <div class="form-group">
+                        <label for="PropertyName">PropertyName</label>
+                        <select style="width:315px;height:50px;"  if="PropertyName" name="PropertyName"
+                          [(ngModel)]="PropertyName" class="form-control">
+                          <option *ngFor="let dl of propertyN" >
+                             {{dl.PropN}}
+                        </option>
+                      </select>
+                      </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                          <input  type="number" name="EstimatedAmount" [(ngModel)]="EstimatedAmount" placeholder="EstimatedAmount" required>
+                        </div>
+                        
+<!--                         
+                        <div class="input-field col s6">
+                          <input type="text" name="EmploymentType" [(ngModel)]="EmploymentType" placeholder="EmploymentType(Salarized/Self-Employed)" required>
+                        </div> -->
+
+                        <div class="form-group">
+                          <label for="EmploymentType">EmploymentType</label>
+                          <select style="width:315px;height:50px;"  if="EmploymentType" name="EmploymentType"
+                            [(ngModel)]="EmploymentType" class="form-control">
+                            <option *ngFor="let dl of emptype" >
+                               {{dl.EmpT}}
+                          </option>
+                        </select>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                          <input type="number" name="RetirementAge" [(ngModel)]="RetirementAge" placeholder="RetirementAge" required>
+                        </div>
+                        <div class="input-field col s6">
+                          <input type="text" name="EmployerName" [(ngModel)]="EmployerName" placeholder="EmployerName(Company Name)" required>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <button (click)="addIncomeDetails()" [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">Submit</button>
+                        </div>
+                        <div class="input-field col s6">
+                            <button  [disabled]="!userRegistrationForm.valid" routerLink="/loan-details" class="btn-large btn-submit" type="submit">Next</button>
+                        </div>
+                      </div>
+                </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+  </ngx-spinner>
+
+
+
+                 

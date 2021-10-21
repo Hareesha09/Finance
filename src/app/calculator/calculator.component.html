@@ -1,0 +1,57 @@
+ <!-- Hero Start -->
+ <div class="hero">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+
+
+                <div class="main-block">
+                    <h1>Loan Eligibility</h1>
+                 
+                   
+                    <label id="icon" for="name"><i class="fa fa-rupee"></i></label>
+                    <input type="number" [(ngModel)] = "pricipal_" placeholder="Monthly Gross Salary"   required />
+                     
+                      <hr>
+                   
+                      <div class="btn-block">
+                        <button style= "font-size: 20px;font-weight: 400;" (click)="calEligibility()">Calculate</button>
+                      </div>
+
+                    <h4 style="text-align:center;font-weight: 300;">Eligible Loan Amount</h4>
+                    <h6 style="text-align:center;font-weight: 300;">60*(0.6* gross monthly salary )</h6>
+                    <h1 style="text-align:center;font-weight: 600;">{{final_1}}</h1>
+
+
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <div class="main-block">
+                    <h1>EMI Calculator</h1>
+                      
+                      <label id="icon" for="name"><i class="fa fa-rupee"></i></label>
+                      <input type="number" [(ngModel)] = "pricipal" placeholder="Loan Amount"   required />
+
+                      <label id="icon" for="name"><i class="fa fa-percent"></i></label>
+                      <input type="number" value=8.5 readonly />
+
+                      <label id="icon" for="name"><i class="fa fa-clock-o"></i></label>
+                      <input type="number"  [(ngModel)] = "time" placeholder="Tenure(Yearly)" required/>
+
+                      <hr>
+                   
+                      <div class="btn-block">
+                        <button style= "font-size:20px;font-weight: 400;" (click)="calEMI()">Calculate</button>
+                      </div>
+    
+                    <h4 style="text-align:center;font-weight: 300;">Equated Monthly Installment (EMI) </h4>
+                    <h1 style="text-align:center;font-weight: 600;">{{final}}</h1>
+                  </div>
+
+               
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+    

@@ -1,0 +1,61 @@
+<div class="alert alert-info">
+  <b>DashBoard<button (click)='logout()' style="float: right;">Logout</button>,{{EmailID.size}}</b>
+</div>
+<div>
+<table id="alter" style="margin-top:40px">  
+  <tr>
+    <th>UserName</th>
+    <th>MailId</th>
+    <th>Phone</th>
+    <th>AdhaarNo</th>
+    <th>PanNo</th>
+    <th>Amount</th>
+    <th>LoanStatus</th>
+    <th>ApplicationId</th>
+    <th>Remark</th>
+  </tr>  
+
+  <tr *ngFor="let prd of UserList1 | async">
+    <ng-container *ngIf="prd.MailID == EmailID.size">
+    <td>{{prd.Name}}</td>
+    <td>{{prd.MailID}}</td>
+    <td>{{prd.PhoneNo}}</td>
+    <td>{{prd.AdhaarNo}}</td>
+    <td>{{prd.PanNo}}</td>
+    <td><b>{{prd.amount}}</b></td>
+    <td><b>{{prd.loanStaus}}</b></td>
+    <td><b>{{prd.ApplicationId}}</b></td>
+    <td>{{prd.Remark}}</td>
+
+  </ng-container>
+  </tr>  
+</table> 
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

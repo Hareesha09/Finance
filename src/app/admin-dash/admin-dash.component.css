@@ -1,0 +1,314 @@
+/*******************************/
+/********* General CSS *********/
+/*******************************/
+body {
+    color: #213546;
+    background: #eeeeee;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    color: #4F84C4;
+    transition: .3s;
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    background: #ffffff;
+}
+
+.container {
+    max-width: 1050px;
+}
+/*******************************/
+/********** Header CSS *********/
+/*******************************/
+.header {
+    position: relative;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+@media (min-width: 1200px) {
+    .header .container-fluid {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+.header .brand {
+    position: relative;
+}
+
+.header .brand img {
+    width: 100%;
+    max-width: 150px;
+    height: 100%;
+    max-height: 100px;
+}
+
+.header .dropdown-menu a.active {
+    color: #4F84C4;
+}
+
+@media (min-width: 992px) {
+    .header .navbar {
+        background: #ffffff !important;
+    }
+    
+    .header .navbar-brand {
+        display: none;
+    }
+    
+    .header .navbar-light a.nav-link {
+        position: relative;
+        padding: 8px 10px;
+        color: #213546;
+        font-size: 16px;
+        z-index: 1;
+    }
+    
+    .header .navbar-light a.nav-link:hover,
+    .header .navbar-light a.nav-link.active {
+        color: #4F84C4;
+    }
+}
+
+@media (max-width: 992px) {
+    .header .brand {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    .header .navbar .btn {
+        margin: 15px 0 10px 0;
+    }
+}
+
+/*******************************/
+/*********** Hero CSS **********/
+/*******************************/
+.hero {
+    position: relative;
+    width: 100%;
+    padding: 45px 0;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: 45px 60px;
+    }
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: 45px;
+    font-weight: 800;
+}
+
+.hero h2 span {
+    color: #4F84C4;
+}
+
+.hero p {
+    margin: 10px 0 20px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.hero a.btn {
+    position: relative;
+    padding: 10px 35px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(#4F84C4, #00539C);
+    transition: .5s;
+}
+
+.hero a.btn:hover {
+    background: linear-gradient(#00539C, #4F84C4);
+}
+
+.hero img {
+    max-width: 100%;
+    max-height: 600px;
+}
+
+@media (max-width: 767.98px) {
+    .hero img {
+        margin-top: 30px;
+    }
+}
+
+/*******************************/
+/*********** News CSS **********/
+/*******************************/
+.news {
+    position: relative;
+    width: 100%;
+    padding: 45px 0 60px 0;
+}
+
+.news h2.section-title {
+    position: relative;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.news p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.news img {
+    max-width: 100%;
+    border-radius: 0 30px 30px 0;
+}
+
+/*******************************/
+/********* Footer CSS **********/
+/*******************************/
+.footer {
+    position: relative;
+    background: #2c3035;
+}
+
+
+/***************************************/
+
+html, body {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    }
+    body, div, h1, form, input, p { 
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
+    color: #666;
+    }
+    h1 {
+    padding: 10px 0;
+    font-size: 32px;
+    font-weight: 300;
+    text-align: center;
+    }
+    p {
+    font-size: 12px;
+    }
+    hr {
+    color: #a9a9a9;
+    opacity: 0.3;
+    }
+    .main-block {
+    max-width: 340px; 
+    min-height: 460px; 
+    padding: 10px 0;
+    margin: auto;
+    border-radius: 5px; 
+    border: solid 1px #ccc;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+    background: #ebebeb; 
+    }
+    form {
+    margin: 0 30px;
+    }
+    .account-type, .gender {
+    margin: 15px 0;
+    }
+    input[type=radio] {
+    display: none;
+    }
+    label#icon {
+    margin: 0;
+    border-radius: 5px 0 0 5px;
+    }
+    label.radio {
+    position: relative;
+    display: inline-block;
+    padding-top: 4px;
+    margin-right: 20px;
+    text-indent: 30px;
+    overflow: visible;
+    cursor: pointer;
+    }
+    label.radio:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1c87c9;
+    }
+    label.radio:after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 4px;
+    top: 8px;
+    left: 4px;
+    border: 3px solid #fff;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    opacity: 0;
+    }
+    input[type=radio]:checked + label:after {
+    opacity: 1;
+    }
+    input[type=number], input[type=password] {
+    width: calc(100% - 57px);
+    height: 36px;
+    margin: 13px 0 0 -5px;
+    padding-left: 10px; 
+    border-radius: 0 5px 5px 0;
+    border: solid 1px #cbc9c9; 
+    box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+    background: #fff; 
+    }
+    input[type=password] {
+    margin-bottom: 15px;
+    }
+    #icon {
+    display: inline-block;
+    padding: 9.3px 15px;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+    background: #1c87c9;
+    color: #fff;
+    text-align: center;
+    }
+    .btn-block {
+    margin-top: 10px;
+    text-align: center;
+    }
+    button {
+    width: 100%;
+    border-radius: 5px; 
+    border: none;
+    background: #095484; 
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    }
+    button:hover {
+    background: #26a9e0;
+    }
+
+

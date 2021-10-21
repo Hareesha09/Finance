@@ -1,0 +1,263 @@
+<div>
+<button (click)="logout()" style="float: right;width: 7%;" type="button" class="btn btn-primary">Logout</button>
+<h4 style="margin-left: 20px;">Welcome, Admin</h4>
+</div>
+
+
+   <!-- User List -->
+<div>
+    <div class="table-responsive" style="margin-left:20px">
+        <table cellspacing="20px" class="table" style="margin-top:20px;">
+          <tr>
+            <th>UserName</th>
+            <th>MailId</th>
+            <th>Phone</th>
+            <th>AdhaarNo</th>
+            <th>PanNo</th>
+            <th>Amount</th>
+            <th>LoanStatus</th>
+            <th>ApplicationId</th>
+            <th>Remark</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let prd of UserList1 | async">
+              <td>{{prd.Name}}</td>
+              <td>{{prd.MailID}}</td>
+              <td>{{prd.PhoneNo}}</td>
+              <td>{{prd.AdhaarNo}}</td>
+              <td>{{prd.PanNo}}</td>
+              <td><b>{{prd.amount}}</b></td>
+              <td><b>{{prd.loanStaus}}</b></td>
+              <td><b>{{prd.ApplicationId}}</b></td>
+              <td>{{prd.Remark}}</td>
+              <td>
+                <button style="font-size:14px" class="btn btn-primary" 
+                (click)='ProductDetailsToEdit(prd.UserId)' 
+                (click)='IncomeDetailsToEdit(prd.UserId)'
+                (click)='LoanDetailsToEdit(prd.UserId)'>Show Details</button>
+                <!-- <button class="btn btn-primary" type="button" matTooltip="Click Edit Button" (click)='IncomeDetailsToEdit(prd.UserId)'>Show Income Details</button>
+                <button class="btn btn-primary" type="button" matTooltip="Click Edit Button" (click)='LoanDetailsToEdit(prd.UserId)'>Show Loan Details</button>  -->
+              </td>
+          </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="hero">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+
+            <div class="col-md-4">
+                <div class="main-block" style="max-height: 500px;margin-bottom: 610px;">
+                  <h4 style="margin-left: 80px;">Approval Details</h4>
+                  <hr>
+                  <form class="form-horizontal" [formGroup]="productForm">
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="pwd">Approved Amount</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtStock" formControlName="Amount">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="pwd"> LoanStaus</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtStock" formControlName="LoanStaus">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <button (click)='Genrate()'>(Click to Genrate Application ID)</button>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtStock" formControlName="ApplicationId" placeholder="Application Id">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="pwd"> Remark</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtStock" formControlName="Remark">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-sm">
+                          </div>
+                          <div class="col-sm">
+                            <button style="margin-right: 350px;" type="submit" class="btn btn-primary" (click)="UpdateUser(productForm.value)">Transfer Fund</button>
+                          </div>
+                        
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group" style="visibility:hidden">
+                      <label class="control-label col-sm-2" for="pwd">Name</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtProductName" formControlName="Name"
+                        >
+                      </div>
+                    </div>
+                    <div class="form-group" style="visibility:hidden">
+                      <label class="control-label col-sm-2" for="pwd">Mail</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtProductCost" formControlName="mailID">
+                      </div>
+                    </div>
+                  
+                    <div class="form-group" style="visibility:hidden">
+                      <label class="control-label col-sm-2" for="pwd"> Phone </label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtProductDescription" formControlName="PhoneNo"
+                      >
+                      </div>
+                    </div>
+                    <div class="form-group" style="visibility:hidden">
+                      <label class="control-label col-sm-2" for="pwd"> Gender </label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtStock" formControlName="Gender">
+                      </div>
+                    </div>
+                  
+                    <div class="form-group" style="visibility:hidden">
+                      <label class="control-label col-sm-2" for="pwd"> Nationality </label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtStock" formControlName="Nationality">
+                      </div>
+                    </div>
+                  
+                    <div class="form-group" style="visibility:hidden">
+                      <label class="control-label col-sm-2" for="pwd"> AdhaarNo</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtStock" formControlName="AdhaarNo" >
+                      </div>
+                    </div>
+                    <div class="form-group" style="visibility:hidden">
+                      <label class="control-label col-sm-2" for="pwd"> PanNo</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtStock" formControlName="PanNo">
+                      </div>
+                    </div>
+
+                    <div class="form-group" style="visibility: hidden;">
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="txtProductCost" formControlName="Password">
+                      </div>
+                    </div>
+
+                    
+                  </form>   
+
+                </div>
+            </div>
+
+            <div class="col-md-4" style="margin-bottom: 550px;">
+              <div class="main-block">
+                <h4 style="margin-left: 80px;">Income Details</h4>
+                <hr>
+                <form class="form-horizontal" [formGroup]="productForm_income">
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="pwd"> PropertyLocation</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="txtProductName" formControlName="PropertyLocation"
+                        readonly>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="pwd">PropertyName</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="txtProductCost" formControlName="PropertyName" readonly>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="pwd"> EstimatedAmount</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="txtProductDescription" formControlName="EstimatedAmount"
+                      readonly>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="pwd"> EmploymentType</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="txtStock" formControlName="EmploymentType" readonly>
+                    </div>
+                  </div>
+                
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="pwd"> RetirementAge</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="txtStock" formControlName="RetirementAge" readonly>
+                    </div>
+                  </div>
+                
+                   <div class="form-group">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm">
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </form>   
+
+              </div>
+            </div>
+
+          <div class="col-md-4" style="margin-bottom: 650px;">
+            <div class="main-block">
+              <h4 style="margin-left: 80px;">Loan Details</h4>
+              <hr>
+              <form class="form-horizontal" [formGroup]="productForm_loan">
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="pwd">MaxLoanGrant</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtProductName" formControlName="MaxLoanGrant"
+                    readonly>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="pwd">InterestRate</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtProductCost" formControlName="InterestRate" readonly>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="pwd">Tenure</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtProductDescription" formControlName="Tenure"
+                    readonly>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="pwd">LoanAmount</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtStock" formControlName="LoanAmount" readonly>
+                  </div>
+                </div>
+                 <div class="form-group">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                      </div>
+                    
+                    </div>
+                  </div>
+                </div>
+              </form>   
+
+            </div>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+  
+
+
+
+  

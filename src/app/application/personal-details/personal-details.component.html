@@ -1,0 +1,88 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <div class="card grey lighten-2">
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width tabs-transparent">
+              <li class="tab">
+                <a>Personal Details</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-content white">
+            <div class="row">
+
+                <form class="col s12 white" #userRegistrationForm="ngForm">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input type="text" name="Name" [(ngModel)]="Name" placeholder="Name" required />
+                      </div>
+                      <div class="input-field col s6">
+                        <input type="text" name="MailID" [(ngModel)]="MailID" placeholder="MailID ">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                          <input  type="password" name="Password" [(ngModel)]="Password" placeholder="Password" required>
+                        </div>
+                        <div class="input-field col s6">
+                          <input type="text" name="PhoneNo" [(ngModel)]="PhoneNo" placeholder="PhoneNo" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <!-- <div class="input-field col s6">
+                          <input type="text" name="Gender" [(ngModel)]="Gender" placeholder="Gender" required>
+                        </div> -->
+                        <div class="form-group">
+                          <label for="Gender">Gender</label>
+                          <select style="width:315px;height:50px;"  if="Gender" name="Gender"
+                            [(ngModel)]="Gender" class="form-control">
+                            <option *ngFor="let dl of gendertype" >
+                               {{dl.GenderT}}
+                          </option>
+                        </select>
+                        </div>
+
+
+                        <div class="input-field col s6">
+                          <input style="margin-left: 87px;margin-top: 10px;" type="text" name="Nationality" [(ngModel)]="Nationality" placeholder="Nationality" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="text" name="AdhaarNo" [(ngModel)]="AdhaarNo" placeholder="AdhaarNo" required>
+                        </div>
+                        <div class="input-field col s6">
+                          <input type="text" name="PanNo" [(ngModel)]="PanNo" placeholder="PanNo" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <button (click)="addPersonalDetails()" (click)="alertMsg()" [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">Submit</button>
+                        </div>
+                        <div class="input-field col s6">
+                          <button [disabled]="!userRegistrationForm.valid" routerLink='/document-upload' class="btn-large btn-submit" type="submit">Next</button>
+                      </div>
+                        
+                      </div>
+                </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+  </ngx-spinner>
+
+
+                 

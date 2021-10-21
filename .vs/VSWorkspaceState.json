@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\PROJECT_Web_API",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\user",
+    "\\src\\app\\user\\sign-in"
+  ],
+  "SelectedNode": "\\src\\app\\user\\sign-in\\sign-in.component.html",
+  "PreviewInSolutionExplorer": false
+}
